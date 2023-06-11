@@ -1,4 +1,4 @@
-# ursina.more.ui
+# Ursina More UI
 More UI for Ursina Engine
 They are update very often.
 
