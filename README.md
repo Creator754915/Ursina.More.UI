@@ -2,6 +2,10 @@
 More UI for Ursina Engine
 They are update very often.
 
+# Installation
+
+```pip install https://github.com/Creator754915/ursina.more.ui.zip```
+
 # Example
 
 ### MessageBox
