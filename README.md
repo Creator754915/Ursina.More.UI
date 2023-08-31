@@ -4,7 +4,7 @@ They are update very often.
 
 # Installation
 
-```pip install https://github.com/Creator754915/ursina.more.ui.git```
+```git clone https://github.com/Creator754915/Ursina.More.UI.git```
 
 # Example
 
