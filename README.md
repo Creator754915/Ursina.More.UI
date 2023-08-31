@@ -60,3 +60,15 @@ layout = Layout(side="lEFT", color=color.gray)
 
 app.run()
 ```
+
+### Background
+
+```py
+app = Ursina()
+
+Background(texture='sky_sunset')
+
+app.run()
+
+```
+
