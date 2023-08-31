@@ -12,7 +12,7 @@ They are update very often.
 
 ```py
 from ursina import Ursina, Tooltip
-from ursina.more.ui import MessageBox
+from Ursina.More.UI import MessageBox
 
 app = Ursina()
 messagebox = MessageBox(messagebox_name='My Messagebox', text='hello world!', scale=(.8, .5), color=color.azure, text_origin=(-.36, .18))
@@ -25,7 +25,7 @@ app.run()
 
 ```py
 from ursina import Ursina, Slider
-from ursina.more.ui import RadioButton
+from Ursina.More.UI import RadioButton
     
 app = Ursina()
 
@@ -38,11 +38,24 @@ app.run()
 
 ```py
 from ursina import Ursina, Slider
-from ursina.more.ui import CheckBox
+from Ursina.More.UI import CheckBox
     
 app = Ursina()
 
 checkbox = CheckBox(start_value=True, color=color.red, scale=.2)
+
+app.run()
+```
+
+### Layout
+
+```py
+from ursina import Ursina, Slider
+from Ursina.More.UI import Layout
+    
+app = Ursina()
+
+layout = Layout(side="lEFT", color=color.gray)
 
 app.run()
 ```
