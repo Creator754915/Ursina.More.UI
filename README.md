@@ -64,6 +64,8 @@ app.run()
 ### Background
 
 ```py
+from ursina import Ursina, Slider
+from Ursina.More.UI import Background
 app = Ursina()
 
 Background(texture='sky_sunset')
