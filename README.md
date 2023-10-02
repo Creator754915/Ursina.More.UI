@@ -7,16 +7,17 @@ They are update very often.
 
 ```git clone https://github.com/Creator754915/Ursina.More.UI.git```
 
-# Example
+# Documentation
 
 ### MessageBox
 
 ```py
-from ursina import Ursina, Tooltip
+from ursina import *
 from Ursina.More.UI import MessageBox
 
 app = Ursina()
-messagebox = MessageBox(messagebox_name='My Messagebox', text='hello world!', scale=(.8, .5), color=color.azure, text_origin=(-.36, .18))
+messagebox = MessageBox(messagebox_name='My Messagebox', text='hello world!', scale=(.8, .5), color=color.azure,
+                        text_origin=(-.36, .18))
 messagebox.tooltip = Tooltip("MessageBox")
 
 app.run()
@@ -25,7 +26,7 @@ app.run()
 ### RadioButton
 
 ```py
-from ursina import Ursina, Slider
+from ursina import *
 from Ursina.More.UI import RadioButton
     
 app = Ursina()
@@ -38,7 +39,7 @@ app.run()
 ### CheckBox
 
 ```py
-from ursina import Ursina, Slider
+from ursina import *
 from Ursina.More.UI import CheckBox
     
 app = Ursina()
@@ -51,7 +52,7 @@ app.run()
 ### Layout
 
 ```py
-from ursina import Ursina, Slider
+from ursina import *
 from Ursina.More.UI import Layout
     
 app = Ursina()
@@ -64,7 +65,7 @@ app.run()
 ### Background
 
 ```py
-from ursina import Ursina, Slider
+from ursina import *
 from Ursina.More.UI import Background
 app = Ursina()
 
@@ -73,4 +74,16 @@ Background(texture='sky_sunset')
 app.run()
 
 ```
+
+### ClickPanel
+
+```py
+from ursina import *
+from Ursina.More.UI import ClickPanel
+app = Ursina()
+
+ClickPanel(scale=(0.3, 0.5), radius=0.01, color=color.black33)
+
+app.run()
+
 
