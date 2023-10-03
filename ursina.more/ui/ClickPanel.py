@@ -3,8 +3,12 @@ from ursina import color as clr
 
 
 class ClickPanel(Button):
-    def __init__(self, scale=(0.3, 0.5), radius=0.01, color=color.black66, visible=False, position=(999, 999),**kwargs):
-        super().__init__(paren=camera.ui, model=Quad(radius=radius), scale=scale, color=color, visible=visible, position=position, z=0)
+    def __init__(self, scale=(0.3, 0.5), radius=0.01, color=color.black66, visible=False, position=(999, 999),
+                 key_bind="right mouse",
+                 **kwargs):
+        super().__init__(paren=camera.ui, model=Quad(radius=radius), scale=scale, color=color, visible=visible,
+                         key_bind=key_bind,
+                         position=position, z=0)
 
         if 'color' in kwargs:
             setattr(self, 'color', kwargs['color'])
@@ -17,7 +21,7 @@ class ClickPanel(Button):
 
         # for i in range(5):
         # c += .14
-        # duplicate(self.button, origin=(0, -11.5), text=f"Button{i}", y=-c)
+        # duplicate(self.button, origin=(0, -11.5), text=f"Button{i}", y=-c, z=-1)
         self.button = Button(parent=self, text="Button1", radius=radius, scale=scale_btn, y=0.4, origin=(0, 0), z=-1,
                              highlight_color=clr.azure)
         self.button2 = Button(parent=self, text="Button2", radius=radius, scale=scale_btn, y=0.26, z=-1,
@@ -32,7 +36,7 @@ class ClickPanel(Button):
                               highlight_color=clr.azure)
 
     def input(self, key):
-        if held_keys["right mouse"]:
+        if held_keys[self.key_bind]:
             if self.visible is False:
                 self.visible = True
                 self.position = mouse.x, mouse.y
@@ -40,10 +44,12 @@ class ClickPanel(Button):
                 self.visible = False
                 self.position = 999, 999
 
+        # print_warning(f"Key not found: {self.key_bind}")
+
 
 if __name__ == "__main__":
     app = Ursina()
 
-    ClickPanel()
+    ClickPanel(key_bind="right mouse")
 
     app.run()
