@@ -9,6 +9,32 @@ They are update very often.
 
 # Documentation
 
+### Messagebox(Entity)
+**.messagebox_name** = 'My Messagebox'
+
+**.text** = 'hello world!'
+
+**.scale** = (.8, .5)
+
+**.color** = color.azure
+
+**.text_origin** = (-.36, .18)
+
+### RadioButton(Button)
+**.start_state** = False
+
+**.state** = False
+
+**.radius** = .5
+
+**.scale** = (.25, .25)
+
+**.color** = color.black33
+
+**.origin_z** =0
+
+## Examples
+
 ### MessageBox
 
 ```py
@@ -82,7 +108,7 @@ from ursina import *
 from Ursina.More.UI import ClickPanel
 app = Ursina()
 
-ClickPanel(scale=(0.3, 0.5), radius=0.01, color=color.black33)
+ClickPanel(key_control=False, key_bind="right mouse")
 
 app.run()
 
