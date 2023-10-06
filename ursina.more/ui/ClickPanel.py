@@ -4,9 +4,11 @@ from ursina import color as clr
 
 class ClickPanel(Button):
     def __init__(self, scale=(0.3, 0.5), radius=0.01, color=color.black66, visible=False, position=(999, 999),
+                 key_control=True,
                  key_bind="right mouse",
                  **kwargs):
         super().__init__(paren=camera.ui, model=Quad(radius=radius), scale=scale, color=color, visible=visible,
+                         key_control=key_control,
                          key_bind=key_bind,
                          position=position, z=0)
 
@@ -36,13 +38,22 @@ class ClickPanel(Button):
                               highlight_color=clr.azure)
 
     def input(self, key):
-        if held_keys[self.key_bind]:
-            if self.visible is False:
-                self.visible = True
-                self.position = mouse.x, mouse.y
-            else:
-                self.visible = False
-                self.position = 999, 999
+        if self.key_control is True:
+            if held_keys['control'] and held_keys[self.key_bind]:
+                if self.visible is False:
+                    self.visible = True
+                    self.position = mouse.x, mouse.y
+                else:
+                    self.visible = False
+                    self.position = 999, 999
+        else:
+            if held_keys[self.key_bind]:
+                if self.visible is False:
+                    self.visible = True
+                    self.position = mouse.x, mouse.y
+                else:
+                    self.visible = False
+                    self.position = 999, 999
 
         # print_warning(f"Key not found: {self.key_bind}")
 
@@ -50,6 +61,6 @@ class ClickPanel(Button):
 if __name__ == "__main__":
     app = Ursina()
 
-    ClickPanel(key_bind="right mouse")
+    ClickPanel(key_control=False, key_bind="right mouse")
 
     app.run()
