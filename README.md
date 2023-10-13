@@ -31,7 +31,37 @@ They are update very often.
 
 **.color** = color.black33
 
-**.origin_z** =0
+**.origin_z** = 0
+
+### ClickPanel(Button)
+
+**.scale** = (0.3, 0.5)
+
+**.radius** = 0.01
+
+**.color** = color.black66
+
+**.visible** = False
+
+**.position** = (999, 999)
+
+**.key_control** = True *#Active control + **key_bind***
+
+**.key_bind** = "right mouse"
+
+**.button_text** = "Button1"
+
+**.button2_text** = "Button2"
+
+**.button3_text** = "Button3"
+
+**.button4_text** = "Button4"
+
+**.button5_text** =" Button5"
+
+**.button6_text** = "Button6"
+
+****kwargs**:
 
 ## Examples
 
@@ -83,7 +113,7 @@ from Ursina.More.UI import Layout
     
 app = Ursina()
 
-layout = Layout(side="lEFT", color=color.gray)
+layout = Layout(side="LEFT", color=color.gray)
 
 app.run()
 ```
