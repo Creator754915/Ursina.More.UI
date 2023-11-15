@@ -22,7 +22,13 @@ def update():
     if mouse.hovered_entity == circle and mouse.left:
         target_x = 0.4 if counter == 0 else -0.4
         counter = 1 if counter == 0 else 0
+        print(circle.x)
     circle.x = lerp(circle.x, target_x, time.dt * 5)
+
+    if circle.x < -.1:
+        circle.color = color.red
+    elif circle.x > .1:
+        circle.color = color.green
 
 
 app.run()
