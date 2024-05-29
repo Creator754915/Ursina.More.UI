@@ -26,7 +26,7 @@ class RadioButton(Button):
             elif self.state is False:
                 self.active.highlight_color = color.blue
 
-        self.active = Button(radius=.5, scale=(self.scale[0] - .05, self.scale[1] - .05), z=-1, color=color.blue)
+        self.active = Button(radius=.5, scale=(self.scale[0] - .035, self.scale[1] - .035), z=-1, color=color.blue)
 
         self.active.on_click = _active
 
@@ -57,6 +57,6 @@ class RadioButton(Button):
 if __name__ == "__main__":
     app = Ursina()
 
-    RadioButton(scale=(.25, .25), color=color.black33)
+    RadioButton(scale=.2, color=color.black33)
 
     app.run()
