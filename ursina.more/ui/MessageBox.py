@@ -1,5 +1,4 @@
-from ursina import Entity, Button, Text, camera, color, mouse, BoxCollider, Sequence, Vec2, Vec3, scene, held_keys, \
-    destroy
+from ursina import *
 from ursina.models.procedural.quad import Quad
 import textwrap
 
@@ -46,8 +45,7 @@ class MessageBox(Entity):
             self.text_entity.world_scale = 1
 
         self.exit_button = Button(parent=self, eternal=True, radius=.25,ignore_paused=True, origin=(0, 0, 2),
-                                  position=(.36, .225), z=1, scale=(.05, .025), color=color.red.tint(-.2), text='x',
-                                  on_click=exit(),name='exit_button')
+                                  position=(.36, .225), z=1, scale=(.05, .025), color=color.red.tint(-.2), text='x')
 
         self.bar = Button(parent=self, eternal=True, ignore_paused=True, origin=(0, 0, 1),
                           position=(0, .225), z=1, scale=(.8, .05), color=color.white, name='bar')
@@ -56,10 +54,10 @@ class MessageBox(Entity):
                           position=(-.30, .225, -.1), origin=(0, 0),
                           add_to_scene_entities=False)
 
-        def _exit_button_input(key):
+        def _exit_button_input():
             destroy(self)
 
-        self.exit_button.input = _exit_button_input
+        self.exit_button.on_click = _exit_button_input
 
     @property
     def text(self):
