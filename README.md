@@ -1,5 +1,7 @@
 # Ursina More UI
-More UI for Ursina Engine.
+**More UI, More Models and More Maths**
+
+All this just for Ursina Engine !
 
 They are update very often.
 
