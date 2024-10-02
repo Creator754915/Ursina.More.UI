@@ -15,6 +15,21 @@ They are update very often.
 
 ## Maths
 
+**Cubic Root** => 
+```py
+curt(5) #1,4953487...
+```
+
+**Factorial** =>
+```py
+fact(5) #120
+```
+
+**Intersection** =>
+```py
+intersection_of([1, 2, 3, 4], [2, 3, 4, 5]) #[2, 3, 4]
+```
+
 ## UI
 **.messagebox_name** = 'My Messagebox'
 
