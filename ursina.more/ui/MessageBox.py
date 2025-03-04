@@ -5,7 +5,7 @@ import textwrap
 
 class MessageBox(Entity):
     color = color.black66
-    default_model = None  # will default to rounded Quad
+    default_model = None
 
     def __init__(self, messagebox_name='', text='', radius=.005, scale=(.8, .5), **kwargs):
         super().__init__()
@@ -13,7 +13,7 @@ class MessageBox(Entity):
         self.disabled = False
         self._on_click = None
 
-        for key, value in kwargs.items():  # set the scale before model for correct corners
+        for key, value in kwargs.items(): 
             if key in ('scale', 'scale_x', 'scale_y', 'scale_z',
                        'world_scale', 'world_scale_x', 'world_scale_y', 'world_scale_z'):
                 setattr(self, key, value)
@@ -33,8 +33,8 @@ class MessageBox(Entity):
             setattr(self, 'color', kwargs['color'])
         self.highlight_color = self.color.tint(.2)
         self.pressed_color = self.color.tint(-.2)
-        self.highlight_scale = 1  # multiplier
-        self.pressed_scale = 1  # multiplier
+        self.highlight_scale = 1  
+        self.pressed_scale = 1 
         self.collider = 'box'
 
         for key, value in kwargs.items():
@@ -111,7 +111,7 @@ class MessageBox(Entity):
             else:
                 super().__setattr__(name, value)
 
-            if isinstance(self.collider, BoxCollider):  # update collider position by making a new one
+            if isinstance(self.collider, BoxCollider): 
                 self.collider = 'box'
 
         if name == 'on_click':
